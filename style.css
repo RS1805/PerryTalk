@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4ECDC4;
+    --secondary-color: #4ECDC4;
+    --background-color: #ffffff;
+    --text-color: #333;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+    background: url('phineas-ferb-cast.png') center center fixed;
+    background-size: cover;
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.37);
+    z-index: -1;
+}
+
+nav{
+    background: var(--primary-color);
+    height: auto;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 4px solid #000;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.inner{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 #000;
+    font-weight: bold;
+}
+
+main{
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.37);
+    text-align: center;
+    border-radius: 15px;
+    padding: 2rem;
+    border: 4px solid #000;
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    min-height: 80vh;
+}
+
+.character-container {
+    display: contents;
+}
+
+.character-box {
+    background: rgba(255, 255, 255, 0.37);
+    padding: 0.8rem;
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.character-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.37);
+}
+
+.character-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+}
+
+.text-container {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15vh;
+    display: block;
+    margin: 0;
+    resize: none;
+    font-size: 1.8rem;
+    font-family: 'VT323', monospace;
+    background: #fff;
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.translate-btn {
+    width: 100%;
+    height: 4rem;
+    margin: 1rem 0;
+    background: var(--secondary-color);
+    color: #000;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    font-family: 'VT323', monospace;
+    border: 3px solid #000;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 5px 5px 0 #000;
+    transition: all 0.3s ease;
+}
+
+.translate-btn:hover{
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 #000;
+}
+
+.top-left { grid-column: 1; grid-row: 1; }
+.top-right { grid-column: 3; grid-row: 1; }
+.bottom-left { grid-column: 1; grid-row: 3; }
+.bottom-right { grid-column: 3; grid-row: 3; }
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        padding: 1rem;
+    }
+
+    .text-container {
+        grid-column: 1;
+        grid-row: 3 / 5;
+        padding: 1rem;
+    }
+
+    .character-box {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .top-left, .top-right, .bottom-left, .bottom-right {
+        grid-column: 1;
+    }
+
+    .top-left { grid-row: 1; }
+    .top-right { grid-row: 2; }
+    .bottom-left { grid-row: 5; }
+    .bottom-right { grid-row: 6; }
+} 
+ 
+ 
